@@ -10,7 +10,21 @@ void setup() {
   int appWidth = displayWidth;
   int appHeight = displayHeight;
   //
-  rect();
+  rect(X, Y, Width, Height);
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
+  rect(X, Y, Width, Height)
 }
 //
 void draw() {}
