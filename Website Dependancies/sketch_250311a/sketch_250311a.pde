@@ -7,6 +7,11 @@
 float X, Y, Width, Height;
 float topDisplayX, topDisplayY, topDisplayWidth, topDisplayHeight;
 float quitX, quitY, quitWidth, quitHeight;
+float shuffleX, shuffleY, shuffleWidth, shuffleHeight;
+float fastreverseX, fastreverseY, fastreverseWidth, fastreverseHeight;
+float nextsongX, nextsongY, nextsongWidth, nextsongHeight;
+float playX, playY, playWidth, playHeight;
+
 
 
 void setup() {
@@ -32,11 +37,23 @@ quitY = appHeight * 0.30;
 quitWidth = appWidth * 0.30; 
 quitHeight = appHeight * 0.30;
 rect (topDisplayX, topDisplayY, topDisplayWidth,topDisplayHeight); 
-
-  rect(X, Y, Width, Height);
-  rect(X, Y, Width, Height);
-  rect(X, Y, Width, Height);
-  rect(X, Y, Width, Height);
+shuffleX = appWidth * 0.20; 
+shuffleY = appHeight * 0.20;
+shuffleWidth = appWidth * 0.20;
+shuffleHeight = appHeight * 0.20; 
+fastreverseX =  appWidth * 0.20;
+fastreverseY = appHeight * 0.20;
+fastreverseWidth =  appWidth * 0.20;
+fastreverseHeight = appHeight * 0.20;
+playX = appWidth * 0.20;
+playY = appHeight * 0.20;
+playWidth = appWidth * 0.20;
+playHeight = appHeight * 0.20;
+ 
+  rect(quitX, quitY, quitWidth, quitHeight);
+  rect(shuffleX, shuffleY, shuffleWidth, shuffleHeight);
+  rect(fastreverseX, fastreverseY, fastreverseWidth, fastreverseHeight);
+  rect(nextsongX, nextsongY, nextsongWidth, nextsongHeight);
   rect(X, Y, Width, Height);
   rect(X, Y, Width, Height);
   rect(X, Y, Width, Height);
