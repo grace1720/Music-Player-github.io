@@ -45,10 +45,10 @@ void setup() {
   topDisplayY = appHeight * 0.;
   topDisplayWidth = appWidth * 0.;
   topDisplayHeight = appHeight * 0.;
-  quitX = appWidth * 0.;
-  quitY = appHeight * 0.;
-  quitWidth = appWidth * 0.;
-  quitHeight = appHeight * 0.;
+  quitX = appWidth * 0.3125;
+  quitY = appHeight * 0.6525;
+  quitWidth = appWidth * 0.065;
+  quitHeight = appHeight * 0.625;
   rect (topDisplayX, topDisplayY, topDisplayWidth, topDisplayHeight);
   shuffleX = appWidth * 0.;
   shuffleY = appHeight * 0.;
@@ -93,7 +93,7 @@ void setup() {
   songimageX = appWidth * 0.34375;
   songimageY = appHeight * 0.123;
   songimageWidth = appWidth * 0.56625;
-  songimageHeight = appHeight * 0.60375;
+  songimageHeight = appHeight * 0.5375;
   songtitleX = appWidth * 0.02125;
   songtitleY = appHeight * 0.375;
   songtitleWidth = appWidth * 0.31875;
@@ -103,9 +103,9 @@ void setup() {
   songartistWidth = appWidth * 0.20875;
   songartistHeight = appHeight * 0.14125;
   timebarX = appWidth * 0.325;
-  timebarY = appHeight * 0.21175;
-  timebarWidth = appWidth * 0.5111;///
-  timebarHeight = appHeight * 0.625; //
+  timebarY = appHeight * 0.71175;
+  timebarWidth = appWidth * 0.6111;///
+  timebarHeight = appHeight * 0.0625; //
   postionofthesongX = appWidth * 0.;
   postionofthesongY = appHeight * 0.;
   postionofthesongWidth = appWidth * 0.;
