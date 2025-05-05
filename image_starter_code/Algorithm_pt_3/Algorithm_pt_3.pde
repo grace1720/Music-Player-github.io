@@ -8,11 +8,11 @@ import ddf.minim.ugens.*;
  //
 //Global Variables
 //Minim minim//initates entire class
-int numberOfSongs = 1; //Best Practice
+int numberOfSongs = 5; //Best Practice
 //int numberOfSoundEffects = ???
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 //AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
-int currentSong = numberOfSongs - numberOfSongs; //ZERO
+int currentSong = numberOfSongs - numberOfSongs; //FIVE
 //
 float musicMenuX, musicMenuY, musicMenuWidth, musicMenuHeight;
 //
@@ -24,9 +24,15 @@ void setup() {
   //
   //Music Loading - STRUCTURED Review
   minim = new Minim(this);
-  String musicPathway = "Music Pong/";
-  String musicPong = "Music Pong/";
-  String musicAll = "Music All/";
+  String musicPathway = "pOp MuZiC/";
+  String musicPong = "Music Pong/";///
+  String musicAll = "Music All/";//
+  String song1.mp3 = "song1.mp3";
+  String song2.mp3 = "song2.mp3";
+  String song3.mp3 = "song3.mp3";
+  String song4.mp3 = "song4.mp3";
+  String song5.mp3 = "song5.mp3";
+  sting
   //Note: Download music and sound effects, then design your player with images, text, and 2D shapes
   //See Google Search: Atari pong logo free image download
   String pongWorld = "Pong World";
@@ -95,7 +101,7 @@ void keyPressed() {
    */
 float musicMenuX, musicMenuY, musicMenuWidth, musicMenuHeight;
 //
-void setup() {
+//void setup() {
   //Display
   fullScreen();
   int appWidth = displayWidth;
@@ -103,8 +109,8 @@ void setup() {
   //
 //Minim minim
 int numberOfSongs = 1; 
-AudioPlayer [] playlist = new Audio player [ numberOfSongs]
-AudioMetaData [] playlistMetaData = new AudioMetaData[ numbeerOfSongs]
+AudioPlayer [] playlist = new Audio player [ numberOfSongs];
+AudioMetaData [] playlistMetaData = new AudioMetaData[ numbeerOfSongs];
 int ////////////////////////////////////////////////////////////////////////////
 PFont appFont;
 Float fontSize;
@@ -186,3 +192,99 @@ void mousePressed() {} //End Mouse Pressed
 void keyPressed() {} // End Key Pressed
 //
 //END of Main 
+
+
+
+
+// Import Minim Library
+import ddf.minim.*;
+
+Minim minim;
+AudioPlayer[] playList;
+int currentSong = song1.mp3;
+int totalSongs = 5; // Change this to match how many songs you have
+
+// Button positions
+float playButtonX, playButtonY, buttonWidth, buttonHeight;
+float nextButtonX, prevButtonX;
+
+void setup() {
+  size(600, 400);
+  background(200);
+  textSize(20);
+  
+  // Setup Minim and load songs
+  minim = new Minim(this);
+  playList = new AudioPlayer[totalSongs];
+
+  for (int i = 0; i < totalSongs; i++) {
+    playList[i] = minim.loadFile("Music/song" + (i+1) + ".mp3");
+  }
+
+  // Set up button positions
+  buttonWidth = 100;
+  buttonHeight = 40;
+  playButtonX = width/2 - buttonWidth/2;
+  playButtonY = height - 80;
+
+  prevButtonX = playButtonX - 120;
+  nextButtonX = playButtonX + 120;
+}
+
+void draw() {
+  background(220);
+  fill(0);
+
+  // Show current song
+  textAlign(CENTER);
+  text("Now Playing: song" + (currentSong + 1), width/2, 50);
+
+  // Draw buttons
+  drawButton(prevButtonX, playButtonY, "Prev");
+  drawButton(playButtonX, playButtonY, "Play/Pause");
+  drawButton(nextButtonX, playButtonY, "Next");
+}
+
+void drawButton(float x, float y, String label) {
+  fill(255);
+  rect(x, y, buttonWidth, buttonHeight);
+  fill(0);
+  text(label, x + buttonWidth/2, y + buttonHeight/2 + 5);
+}
+
+// Mouse interaction
+void mousePressed() {
+  if (mouseOverButton(playButtonX, playButtonY)) {
+    togglePlay();
+  } else if (mouseOverButton(nextButtonX, playButtonY)) {
+    nextSong();
+  } else if (mouseOverButton(prevButtonX, playButtonY)) {
+    previousSong();
+  }
+}
+
+boolean mouseOverButton(float x, float y) {
+  return mouseX > x && mouseX < x + buttonWidth && mouseY > y && mouseY < y + buttonHeight;
+}
+
+void togglePlay() {
+  if (playList[currentSong].isPlaying()) {
+    playList[currentSong].pause();
+  } else {
+    playList[currentSong].play();
+  }
+}
+
+void nextSong() {
+  playList[currentSong].pause();
+  playList[currentSong].rewind();
+  currentSong = (currentSong + 1) % totalSongs;
+  playList[currentSong].play();
+}
+
+void previousSong() {
+  playList[currentSong].pause();
+  playList[currentSong].rewind();
+  currentSong = (currentSong - 1 + totalSongs) % totalSongs;
+  playList[currentSong].play();
+}
