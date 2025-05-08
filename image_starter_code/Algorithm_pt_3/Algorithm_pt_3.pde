@@ -25,23 +25,22 @@ void setup() {
   //Music Loading - STRUCTURED Review
   minim = new Minim(this);
   String musicPathway = "pOp MuZiC/";
-  String musicPong = "Music Pong/";///
-  String musicAll = "Music All/";//
+  String musicPong = "Music Pong/";
+  String musicAll = "Music All/";
   String song1.mp3 = "song1.mp3";
   String song2.mp3 = "song2.mp3";
   String song3.mp3 = "song3.mp3";
   String song4.mp3 = "song4.mp3";
   String song5.mp3 = "song5.mp3";
-  sting
+  String fileExtension_mp3 = ".mp3"; 
+
+    
   //Note: Download music and sound effects, then design your player with images, text, and 2D shapes
   //See Google Search: Atari pong logo free image download
-  String pongWorld = "Pong World";
+
   //Add all files, CS20 Review is special OS Java Library
   //Including the reading of the number of files in the array
-  String fileExtension_mp3 = ".mp3";
   //
-  String musicDirectory = "../../../../" + musicPathway + musicPong;
-  String file = musicDirectory + pongWorld + fileExtension_mp3; //relative pathway or directory
   println( file );
   //Create a FOR loop to loadFile() a changing songName
   playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
@@ -111,7 +110,6 @@ float musicMenuX, musicMenuY, musicMenuWidth, musicMenuHeight;
 int numberOfSongs = 1; 
 AudioPlayer [] playlist = new Audio player [ numberOfSongs];
 AudioMetaData [] playlistMetaData = new AudioMetaData[ numbeerOfSongs];
-int ////////////////////////////////////////////////////////////////////////////
 PFont appFont;
 Float fontSize;
 String Title = "Grace's Music Player";
@@ -128,7 +126,7 @@ int shorterSide = ( appWidth >= appHeight) ? appHeight : appWidth ; // Landscape
 //
 minim = new Minim (this);
 string musicPathway = "music/";
-string song = "songnameinserthere";
+string song = "song1.mp3";
 string fileExtension_mp3 = ",mp3"
 string file = musicDirectly + song + fileExtension 
 
@@ -168,7 +166,7 @@ println(textWidth(playListMetaData[currentSong].Title() ), TitleWidth );
 while (textWidth(playListMetaData[currentSong].Title() ) > TitleWidth ) { 
    fontSize = fontSize * 0.78;
    textFont(TitleFont,fontSize);
-   println("step:", textWidth(playListMetaData[currentSong].Title() ),TitleX, TitleY, TitleWidth, TitleHeight, );
+// println("step:", textWidth(playListMetaData[currentSong].Title() ),TitleX, TitleY, TitleWidth, TitleHeight, );
 }
 //
 //code before drawing text
@@ -184,7 +182,7 @@ fill(white);
 } //End Setup
 //
 void draw () {
-  // EMPTY Draw
+// EMPTY Draw
 } // End Draw
 //
 void mousePressed() {} //End Mouse Pressed 
