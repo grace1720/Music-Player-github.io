@@ -20,7 +20,7 @@ void setup() {
   int numberOfSongs = 1;
   AudioPlayer [] playlist = new Audio player [ numberOfSongs]
     AudioMetaData [] playlistMetaData = new AudioMetaData[ numbeerOfSongs]
-    int ////////////////////////////////////////////////////////////////////////////
+
     PFont appFont;
   Float fontSize;
   String Title = "Grace's Music Player";
@@ -36,14 +36,10 @@ void setup() {
     int shorterSide = ( appWidth >= appHeight) ? appHeight : appWidth ; // Landscape, Portrait, & Square
     //
     minim = new Minim (this);
-    string musicPathway = "music/";
-    string song = "songnameinserthere";
-    string fileExtension_mp3 = ",mp3"
-      string file = musicDirectly + song + fileExtension
-
-
-
-
+    String musicPathway = "pOp MuZiC/";
+    String song = "song1.mp3";
+    String fileExtension_mp3 = ",mp3";
+    String file = musicDirectly + song + fileExtension
 
 
 
@@ -51,7 +47,7 @@ void setup() {
      println ("Start of Console");
      String[] fontList = PFont.list();
      printArray(fontList);
-     */
+     */;
       float fontSize = shorterSide;
     PFont TitleFont = createFont("Candara", fontSize);
 
@@ -77,7 +73,7 @@ void setup() {
     while (textWidth(playListMetaData[currentSong].Title() ) > TitleWidth ) {
       fontSize = fontSize * 0.78;
       textFont(TitleFont, fontSize);
-      println("step:", textWidth(playListMetaData[currentSong].Title() ), TitleX, TitleY, TitleWidth, TitleHeight, );
+      //println("step:", textWidth(playListMetaData[currentSong].Title() ), TitleX, TitleY, TitleWidth, TitleHeight, );
     }
     //
     //code before drawing text
