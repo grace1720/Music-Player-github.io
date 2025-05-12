@@ -16,30 +16,30 @@ void setup() {
   int appWidth = displayWidth;
   int appHeight = displayHeight;
   //
-  //Minim minim
-  int numberOfSongs = 1;
-  AudioPlayer [] playlist = new Audio player [ numberOfSongs]
-    AudioMetaData [] playlistMetaData = new AudioMetaData[ numbeerOfSongs]
+  Minim minim;
+  int numberOfSongs = 3;
+  AudioPlayer [] playlist = new AudioPlayer [ numberOfSongs];
+  AudioMetaData [] playlistMetaData = new AudioMetaData[ numberOfSongs];
 
-    PFont appFont;
+  PFont appFont;
   Float fontSize;
   String Title = "Grace's Music Player";
   //
   float TitleX, TitleY, TitleWidth, TitleHeight;
-  void setup() {
+  //void setup() }
 
     //Display
     //fullscreen();
     size(700, 500);
     int appWidth = width;
     int appHeight = height;
-    int shorterSide = ( appWidth >= appHeight) ? appHeight : appWidth ; // Landscape, Portrait, & Square
+    int shorterSide = ( appWidth >= appHeight) ? appHeight : appWidth; // Landscape, Portrait, & Square
     //
-    minim = new Minim (this);
-    String musicPathway = "pOp MuZiC/";
-    String song = "song1.mp3";
-    String fileExtension_mp3 = ",mp3";
-    String file = musicDirectly + song + fileExtension
+ Minim = new Minim (this);
+  String musicPathway = "pOp MuZiC/";
+  String song = "song1.mp3";
+  String fileExtension_mp3 = ",mp3";
+  String file = musicDirectly + song + fileExtension;
 
 
 
@@ -48,15 +48,15 @@ void setup() {
      String[] fontList = PFont.list();
      printArray(fontList);
      */;
-      float fontSize = shorterSide;
+    float fontSize = shorterSide;
     PFont TitleFont = createFont("Candara", fontSize);
 
 
     //Tools / Create Font / Find Font / Do Not Press "OK", known bug (not loadFont () )
     //
 
-    //population
-    float TitleX, TitleY, TitleWidth, TitleHeight;
+    population
+   Float TitleX, TitleY, TitleWidth, TitleHeight;
     TitleX  = appWidth*1/4;
     TitleY = appHeight*1/4;
     TitleWidth = appWidth*1/2;
@@ -69,8 +69,8 @@ void setup() {
     float  CandaraAspectRatio = 1.04; //AR = fontsize ? rect (Height), unique for each font
     fontSize = TitleHeight * CandaraAspectRatio;
     textFont (TitleFont, fontSize);
-    println(textWidth(playListMetaData[currentSong].Title() ), TitleWidth );
-    while (textWidth(playListMetaData[currentSong].Title() ) > TitleWidth ) {
+  println(textWidth(playListMetaData[currentSong].Title() ), TitleWidth );
+  while (textWidth(playListMetaData[currentSong].Title() ) > TitleWidth ); {
       fontSize = fontSize * 0.78;
       textFont(TitleFont, fontSize);
       //println("step:", textWidth(playListMetaData[currentSong].Title() ), TitleX, TitleY, TitleWidth, TitleHeight, );
