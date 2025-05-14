@@ -8,7 +8,7 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 //Minim minim
-float musicMenuX, musicMenuY, musicMenuWidth, musicMenuHeight;
+Float musicMenuX, musicMenuY, musicMenuWidth, musicMenuHeight;
 //
 void setup() {
   //Display
@@ -48,15 +48,14 @@ void setup() {
      String[] fontList = PFont.list();
      printArray(fontList);
      */;
-    float fontSize = shorterSide;
+    Float fontSize = shorterSide;
     PFont TitleFont = createFont("Candara", fontSize);
 
 
     //Tools / Create Font / Find Font / Do Not Press "OK", known bug (not loadFont () )
     //
 
-    population
-   Float TitleX, TitleY, TitleWidth, TitleHeight;
+   //population
     TitleX  = appWidth*1/4;
     TitleY = appHeight*1/4;
     TitleWidth = appWidth*1/2;
@@ -66,11 +65,11 @@ void setup() {
 
     //
     //Font Size Algorithm
-    float  CandaraAspectRatio = 1.04; //AR = fontsize ? rect (Height), unique for each font
+    Float  CandaraAspectRatio = 1.04; //AR = fontsize ? rect (Height), unique for each font
     fontSize = TitleHeight * CandaraAspectRatio;
     textFont (TitleFont, fontSize);
   println(textWidth(playListMetaData[currentSong].Title() ), TitleWidth );
-  while (textWidth(playListMetaData[currentSong].Title() ) > TitleWidth ); {
+ // while (textWidth(playListMetaData[currentSong].Title() ) > TitleWidth ); {
       fontSize = fontSize * 0.78;
       textFont(TitleFont, fontSize);
       //println("step:", textWidth(playListMetaData[currentSong].Title() ), TitleX, TitleY, TitleWidth, TitleHeight, );
@@ -78,10 +77,11 @@ void setup() {
     //
     //code before drawing text
     color SummerMimosas = #C6E3FF;
-    fill(SummerMimosas);
+   
+    
     textAlign (CENTER, CENTER);
-    //Values: [ LEFT | CENTER| RIGHT] & [ TOP | CENTER | BOTTOM | BASELINE]
-    textFont (TitleFont, fontSize);
+    Values: [ LEFT | CENTER| RIGHT] & [ TOP | CENTER | BOTTOM | BASELINE]
+   textFont (TitleFont, fontSize);
     text(Title, TitleX, TitleY, TitleWidth, TitleHeight);
     color white = #FFFFFF;
     fill(white);
