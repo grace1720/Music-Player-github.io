@@ -27,7 +27,7 @@ void setup() {
   playList[0] = minim.loadFile(songPath);
 
   // Start playing the song
-  playList[0].play();
+  playList[0].play(0);
 
   // Set up title area
   titleX = width * 0.25;
