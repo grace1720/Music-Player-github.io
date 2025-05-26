@@ -25,7 +25,6 @@ void setup() {
   //Music Loading - STRUCTURED Review
   minim = new Minim(this);
   String musicPathway = "pOp MuZiC/";
-  String musicPong = "Music Pong/";
   String musicAll = "Music All/";
   String song1.mp3 = "song1.mp3";
   String song2.mp3 = "song2.mp3";
