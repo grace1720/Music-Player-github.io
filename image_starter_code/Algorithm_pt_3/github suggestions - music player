@@ -1,0 +1,125 @@
+// Grace's Music Player
+// Import Minim Library
+import ddf.minim.*;
+
+Minim minim;
+AudioPlayer[] playList;
+String[] songNames = {
+  "song1.mp3",
+  "song2.mp3",
+  "song3.mp3",
+  "song4.mp3",
+  "song5.mp3"
+};
+int numberOfSongs = songNames.length;
+int currentSong = 0;
+
+// Button Layout
+float playButtonX, playButtonY, buttonWidth, buttonHeight;
+float nextButtonX, prevButtonX;
+
+void setup() {
+  size(700, 500);
+  minim = new Minim(this);
+
+  // Load songs
+  playList = new AudioPlayer[numberOfSongs];
+  for (int i = 0; i < numberOfSongs; i++) {
+    playList[i] = minim.loadFile("Music/" + songNames[i]);
+  }
+
+  // Button positions
+  buttonWidth = 120;
+  buttonHeight = 45;
+  playButtonX = width/2 - buttonWidth/2;
+  playButtonY = height - 100;
+  prevButtonX = playButtonX - 160;
+  nextButtonX = playButtonX + 160;
+
+  textAlign(CENTER, CENTER);
+  textSize(24);
+}
+
+void draw() {
+  background(180, 210, 240);
+  fill(50, 90, 160);
+  text("Grace's Music Player", width/2, 40);
+
+  // Show current song title
+  fill(20);
+  textSize(20);
+  text("Now Playing: " + songNames[currentSong], width/2, 120);
+
+  // Draw buttons
+  drawButton(prevButtonX, playButtonY, "Prev");
+  drawButton(playButtonX, playButtonY, playList[currentSong].isPlaying() ? "Pause" : "Play");
+  drawButton(nextButtonX, playButtonY, "Next");
+
+  // Show instructions
+  textSize(14);
+  fill(60, 60, 80);
+  text("Click Play to start. Use Prev/Next to change songs.", width/2, height - 30);
+}
+
+void drawButton(float x, float y, String label) {
+  fill(255);
+  stroke(0, 80);
+  rect(x, y, buttonWidth, buttonHeight, 12);
+  fill(40, 60, 100);
+  textSize(18);
+  text(label, x + buttonWidth/2, y + buttonHeight/2);
+}
+
+void mousePressed() {
+  if (overButton(playButtonX, playButtonY)) {
+    togglePlay();
+  } else if (overButton(nextButtonX, playButtonY)) {
+    nextSong();
+  } else if (overButton(prevButtonX, playButtonY)) {
+    previousSong();
+  }
+}
+
+boolean overButton(float x, float y) {
+  return mouseX > x && mouseX < x + buttonWidth && mouseY > y && mouseY < y + buttonHeight;
+}
+
+void togglePlay() {
+  if (playList[currentSong].isPlaying()) {
+    playList[currentSong].pause();
+  } else {
+    // Stop any other song that might be playing
+    for (int i = 0; i < numberOfSongs; i++) {
+      if (i != currentSong) {
+        playList[i].pause();
+        playList[i].rewind();
+      }
+    }
+    playList[currentSong].play();
+  }
+}
+
+void nextSong() {
+  playList[currentSong].pause();
+  playList[currentSong].rewind();
+  currentSong = (currentSong + 1) % numberOfSongs;
+  playList[currentSong].rewind();
+  playList[currentSong].play();
+}
+
+void previousSong() {
+  playList[currentSong].pause();
+  playList[currentSong].rewind();
+  currentSong = (currentSong - 1 + numberOfSongs) % numberOfSongs;
+  playList[currentSong].rewind();
+  playList[currentSong].play();
+}
+
+// Stop all audio when closing
+void stop() {
+  for (int i = 0; i < numberOfSongs; i++) {
+    playList[i].close();
+  }
+  minim.stop();
+  super.stop();
+}
