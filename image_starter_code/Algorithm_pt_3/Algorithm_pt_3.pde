@@ -8,7 +8,7 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim; //initates entire class
-int numberOfSongs = 8; //Best Practice
+int numberOfSongs = 5; //Best Practice
 //int numberOfSoundEffects = ???
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 //AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
@@ -74,7 +74,7 @@ void setup() {
   String musicDirectory = "../../" + MusicFile ; 
   //Create a FOR loop to loadFile() a changing songName, Create a Procedure with two Arrays first
   String file = musicDirectory + Crybaby + fileExtension_mp3; //relative pathway or directory
-  //String file = musicDirectory + pongWorld + fileExtension_mp3; //relative pathway or directory
+  //String file = musicDirectory +  fileExtension_mp3; //relative pathway or directory
   currentSong=0;
   playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   playListMetaData[currentSong] = playList[currentSong].getMetaData();
@@ -223,29 +223,29 @@ void setup() {
   //shuffleDivWidth = widthOfButton;
   //shuffleDivHeight = widthOfButton;
   ////
-  float musicSongPaddingY = widthOfButton*1/4;
-  float musicSongSpaceX = stopDivX;
-  float musicSongSpaceY = stopDivY + widthOfButton + musicSongPaddingY;
-  float musicSongSpaceWidth = appWidth - widthOfButton*2;
-  float musicSongSpaceHeight = appHeight - musicSongPaddingY - musicSongSpaceY;
-  //rect(musicSongSpaceX, musicSongSpaceY, musicSongSpaceWidth, musicSongSpaceHeight); //testing only
-  songPositionDivX = musicSongSpaceX;
-  songPositionDivY = musicSongSpaceY;
-  songPositionDivWidth = musicSongSpaceWidth*1/5;
-  songPositionDivHeight = musicSongSpaceHeight*2/5;
-  timeRemainingDivX = musicSongSpaceX + musicSongSpaceWidth*3/5;
-  timeRemainingDivY = musicSongSpaceY + musicSongSpaceHeight*3/5;
-  timeRemainingDivWidth = musicSongSpaceWidth*1/5;
-  timeRemainingDivHeight = musicSongSpaceHeight*2/5;
-  totalTimeDivX = musicSongSpaceX + musicSongSpaceWidth*4/5;
-  totalTimeDivY = musicSongSpaceY + musicSongSpaceHeight*3/5;
-  totalTimeDivWidth = musicSongSpaceWidth*1/5;
-  totalTimeDivHeight = musicSongSpaceHeight*2/5;
-  float musicSongSpaceButtonHeight = musicSongSpaceHeight*1/5;
-  timeBarDivX = musicSongSpaceX;
-  timeBarDivY = musicSongSpaceY + musicSongSpaceHeight*2/5;
-  timeBarDivWidth = musicSongSpaceWidth;
-  timeBarDivHeight = musicSongSpaceHeight*1/5;
+  //float musicSongPaddingY = widthOfButton*1/4;
+  //float musicSongSpaceX = stopDivX;
+  //float musicSongSpaceY = stopDivY + widthOfButton + musicSongPaddingY;
+  //float musicSongSpaceWidth = appWidth - widthOfButton*2;
+  //float musicSongSpaceHeight = appHeight - musicSongPaddingY - musicSongSpaceY;
+  ////rect(musicSongSpaceX, musicSongSpaceY, musicSongSpaceWidth, musicSongSpaceHeight); //testing only
+  //songPositionDivX = musicSongSpaceX;
+  //songPositionDivY = musicSongSpaceY;
+  //songPositionDivWidth = musicSongSpaceWidth*1/5;
+  //songPositionDivHeight = musicSongSpaceHeight*2/5;
+  //timeRemainingDivX = musicSongSpaceX + musicSongSpaceWidth*3/5;
+  //timeRemainingDivY = musicSongSpaceY + musicSongSpaceHeight*3/5;
+  //timeRemainingDivWidth = musicSongSpaceWidth*1/5;
+  //timeRemainingDivHeight = musicSongSpaceHeight*2/5;
+  //totalTimeDivX = musicSongSpaceX + musicSongSpaceWidth*4/5;
+  //totalTimeDivY = musicSongSpaceY + musicSongSpaceHeight*3/5;
+  //totalTimeDivWidth = musicSongSpaceWidth*1/5;
+  //totalTimeDivHeight = musicSongSpaceHeight*2/5;
+  //float musicSongSpaceButtonHeight = musicSongSpaceHeight*1/5;
+  //timeBarDivX = musicSongSpaceX;
+  //timeBarDivY = musicSongSpaceY + musicSongSpaceHeight*2/5;
+  //timeBarDivWidth = musicSongSpaceWidth;
+  //timeBarDivHeight = musicSongSpaceHeight*1/5;
   //
   //DIVs
   //rect(X, Y, Width, Height)
@@ -282,65 +282,65 @@ void setup() {
   //Images Drawing
   //
   //Image Aspect Ratio Algorithm: demonstrating Landscape to Portrait
-  String upArrow = "../../";
-  String folders = "Lesson Dependancies Folder/Images/";
-  String bike = "bike"; //Fpr QUIT Button
-  String oldManPortrait = "Old man portrait"; //MAIN Image DIV
-  String fileExtensionJPG = ".jpg";
-  String fileExtensionPNG = ".png";
-  String myFirstImagePathway = upArrow + folders + oldManPortrait + fileExtensionPNG;
-  String mySecondImagePathway = upArrow + folders + bike + fileExtensionJPG;
-  myFirstImage = loadImage( myFirstImagePathway );
-  mySecondImage = loadImage( mySecondImagePathway );
-  int myFirstImageWidth = 2800;
-  int myFirstImageHeight = 3500;
-  int mySecondImageWidth = 860;
-  int mySecondImageHeight = 529;
-  float imageAspectRatioFirst_GreaterOne = ( myFirstImageWidth >= myFirstImageHeight ) ? float(myFirstImageWidth)/float(myFirstImageHeight) : float(myFirstImageHeight)/float(myFirstImageWidth) ; // Choice x / for bigger or smaller
-  float imageAspectRatioSecond_GreaterOne = ( mySecondImageWidth >= mySecondImageHeight ) ? float(mySecondImageWidth)/float(mySecondImageHeight) : float(mySecondImageHeight)/float(mySecondImageWidth) ; // Choice x / for bigger or smaller
-  Boolean imageLandscapeFirst = ( myFirstImageWidth >= myFirstImageHeight ) ? true : false ;
-  Boolean imageLandscapeSecond = ( mySecondImageWidth >= mySecondImageHeight ) ? true : false ;
-  /*Only the image geometry needs to be know for the algorithm below
-   - When the Geometries change, big dimension to small dimension must happen or image will not fit
-   - still need an ERROR-Check with oddly shaped landscape-landscape, protrait-portrait resampling
-   - size-decreasing algorithms (resampling) discussed in Text
-   */
-  //Old Man Image in Image DIV
-  if ( imageLandscapeFirst==true ) {
-    imageWidthChanged_First = imageDivWidth;
-    imageHeightChanged_First = ( myFirstImageWidth >= imageDivWidth ) ? imageWidthChanged_First/imageAspectRatioFirst_GreaterOne : imageWidthChanged_First*imageAspectRatioFirst_GreaterOne ;
-    if ( imageHeightChanged_First > imageDivHeight ) { //ERROR Catch
-      println("First Image Aspect Ratio algorithm Landscape ERROR");
-      exit();
-      //noLoop(); //Debugging only
-    }
-  } else {
-    imageHeightChanged_First = imageDivHeight;
-    imageWidthChanged_First = ( myFirstImageHeight >= imageDivHeight ) ? imageHeightChanged_First/imageAspectRatioFirst_GreaterOne : imageHeightChanged_First*imageAspectRatioFirst_GreaterOne ;
-    if ( imageWidthChanged_First > imageDivWidth ) { //ERROR Catch
-      println("First Image Aspect Ratio algorithm Portrait ERROR");
-      exit();
-      //noLoop(); //Debugging only
-    }
-  }
-  //Old Man Portrait in Image DIV
-  image( myFirstImage, imageDivX, imageDivY, imageWidthChanged_First, imageHeightChanged_First );
-  //Bike Image in QUIT Button DIV
-  if ( imageLandscapeSecond==true ) {
-    imageWidthChanged_Second = quitWidth;
-    imageHeightChanged_Second = ( mySecondImageWidth >= quitWidth ) ? imageWidthChanged_Second/imageAspectRatioSecond_GreaterOne : imageWidthChanged_Second*imageAspectRatioSecond_GreaterOne ;
-    if ( imageHeightChanged_Second > quitHeight ) { //ERROR Catch
-      println("Second Image Aspect Ratio algorithm Landscape ERROR");
-      exit();
-      //noLoop(); //Debugging only
-    }
-  } else {
-    imageHeightChanged_Second = quitHeight;
-    imageWidthChanged_Second = ( mySecondImageHeight >= quitHeight ) ? imageHeightChanged_Second/imageAspectRatioSecond_GreaterOne : imageHeightChanged_Second*imageAspectRatioSecond_GreaterOne ;
-    if ( imageWidthChanged_Second > quitWidth ) { //ERROR Catch
-      println("Second Image Aspect Ratio algorithm Portrait ERROR");
-      exit();
-      //noLoop(); //Debugging only
+  //String upArrow = "../../";
+  //String folders = "Lesson Dependancies Folder/Images/";
+  //String bike = "bike"; //Fpr QUIT Button
+  //String oldManPortrait = "Old man portrait"; //MAIN Image DIV
+  //String fileExtensionJPG = ".jpg";
+  //String fileExtensionPNG = ".png";
+  //String myFirstImagePathway = upArrow + folders + oldManPortrait + fileExtensionPNG;
+  //String mySecondImagePathway = upArrow + folders + bike + fileExtensionJPG;
+  //myFirstImage = loadImage( myFirstImagePathway );
+  //mySecondImage = loadImage( mySecondImagePathway );
+  //int myFirstImageWidth = 2800;
+  //int myFirstImageHeight = 3500;
+  //int mySecondImageWidth = 860;
+  //int mySecondImageHeight = 529;
+  //float imageAspectRatioFirst_GreaterOne = ( myFirstImageWidth >= myFirstImageHeight ) ? float(myFirstImageWidth)/float(myFirstImageHeight) : float(myFirstImageHeight)/float(myFirstImageWidth) ; // Choice x / for bigger or smaller
+  //float imageAspectRatioSecond_GreaterOne = ( mySecondImageWidth >= mySecondImageHeight ) ? float(mySecondImageWidth)/float(mySecondImageHeight) : float(mySecondImageHeight)/float(mySecondImageWidth) ; // Choice x / for bigger or smaller
+  //Boolean imageLandscapeFirst = ( myFirstImageWidth >= myFirstImageHeight ) ? true : false ;
+  //Boolean imageLandscapeSecond = ( mySecondImageWidth >= mySecondImageHeight ) ? true : false ;
+  ///*Only the image geometry needs to be know for the algorithm below
+  // - When the Geometries change, big dimension to small dimension must happen or image will not fit
+  // - still need an ERROR-Check with oddly shaped landscape-landscape, protrait-portrait resampling
+  // - size-decreasing algorithms (resampling) discussed in Text
+  // */
+  ////Old Man Image in Image DIV
+  //if ( imageLandscapeFirst==true ) {
+  //  //imageWidthChanged_First = imageDivWidth;
+  //  //imageHeightChanged_First = ( myFirstImageWidth >= imageDivWidth ) ? imageWidthChanged_First/imageAspectRatioFirst_GreaterOne : imageWidthChanged_First*imageAspectRatioFirst_GreaterOne ;
+  //  if ( imageHeightChanged_First > imageDivHeight ) { //ERROR Catch
+  //    println("First Image Aspect Ratio algorithm Landscape ERROR");
+  //    exit();
+  //    //noLoop(); //Debugging only
+  //  }
+  //} else {
+  //  imageHeightChanged_First = imageDivHeight;
+  //  imageWidthChanged_First = ( myFirstImageHeight >= imageDivHeight ) ? imageHeightChanged_First/imageAspectRatioFirst_GreaterOne : imageHeightChanged_First*imageAspectRatioFirst_GreaterOne ;
+  //  if ( imageWidthChanged_First > imageDivWidth ) { //ERROR Catch
+  //    println("First Image Aspect Ratio algorithm Portrait ERROR");
+  //    exit();
+  //    //noLoop(); //Debugging only
+  //  }
+  //}
+  ////Old Man Portrait in Image DIV
+  //image( myFirstImage, imageDivX, imageDivY, imageWidthChanged_First, imageHeightChanged_First );
+  ////Bike Image in QUIT Button DIV
+  //if ( imageLandscapeSecond==true ) {
+  //  imageWidthChanged_Second = quitWidth;
+  //  imageHeightChanged_Second = ( mySecondImageWidth >= quitWidth ) ? imageWidthChanged_Second/imageAspectRatioSecond_GreaterOne : imageWidthChanged_Second*imageAspectRatioSecond_GreaterOne ;
+  //  if ( imageHeightChanged_Second > quitHeight ) { //ERROR Catch
+  //    println("Second Image Aspect Ratio algorithm Landscape ERROR");
+  //    exit();
+  //    //noLoop(); //Debugging only
+  //  }
+  //} else {
+  //  imageHeightChanged_Second = quitHeight;
+  //  imageWidthChanged_Second = ( mySecondImageHeight >= quitHeight ) ? imageHeightChanged_Second/imageAspectRatioSecond_GreaterOne : imageHeightChanged_Second*imageAspectRatioSecond_GreaterOne ;
+  //  if ( imageWidthChanged_Second > quitWidth ) { //ERROR Catch
+  //    println("Second Image Aspect Ratio algorithm Portrait ERROR");
+  //    exit();
+  //    //noLoop(); //Debugging only
     }
   }
   // Bike Image in QUIT Div
@@ -353,17 +353,35 @@ void setup() {
    - choose Aspect Ratio that must be mutliplied: fontSize/titleHeight
    - Rewriting fontSize with formulae
    */
-  float harringtonAspectRatio = fontSize / songTitleDivHeight;
-  fontSize = songTitleDivHeight*harringtonAspectRatio;
+     fontSize = fontSize * 0.78;
+   textFont(TitleFont,fontSize);
+// println("step:", textWidth(playListMetaData[currentSong].Title() ),TitleX, TitleY, TitleWidth, TitleHeight, );
+}
+//
+//code before drawing text
+
   //
-  //Minimum Lines of code to format and draw text with colour
-  color purpleInk = #2C08FF;
-  fill(purpleInk); //Ink, hexidecimal copied from Color Selector
+//Minimum Lines of code to format and draw text with colour
+ color SummerMimosas = #C6E3FF;
+  //fill(SummerMimosas);//Ink, hexidecimal copied from Color Selector
   textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-  textFont(appFont, fontSize); //see variable note
-  //textFont() has option to combine font declaration with textSize()
+  textFont (TitleFont, fontSize);
+text(Title, TitleX, TitleY, TitleWidth, TitleHeight);
+color white = #FFFFFF;
+fill(white); 
   //
+  //Font Size Algorithm
+float  CandaraAspectRatio = 1.04; //AR = fontsize ? rect (Height), unique for each font
+fontSize = TitleHeight * CandaraAspectRatio;
+textFont (TitleFont, fontSize);
+println(textWidth(playListMetaData[currentSong].Title() ), TitleWidth ); 
+while (textWidth(playListMetaData[currentSong].Title() ) > TitleWidth ) { 
+   fontSize = fontSize * 0.78;
+   textFont(TitleFont,fontSize);
+// println("step:", textWidth(playListMetaData[currentSong].Title() ),TitleX, TitleY, TitleWidth, TitleHeight, );
+//
+//
   //Drawing Text
   //Option draw ```title```
   //Decrease Font when wrapped around
