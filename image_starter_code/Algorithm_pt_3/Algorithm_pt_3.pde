@@ -119,166 +119,215 @@ void setup() {
   int beginningButtonSpace = widthOfButton;
   int buttonY = appHeight*3/5;
   
-  quitX = appWidth - appShortSide*1/20;
-  quitY = 0;
-  quitWidth = appShortSide*1/20;
-  quitHeight = appShortSide*1/20;
-  songTitleDivX = beginningButtonSpace;
-  songTitleDivY = appHeight*1.5/20;
-  songTitleDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
-  songTitleDivHeight = appHeight*1/10;
-  imageDivX = beginningButtonSpace;
-  imageDivY = appHeight*4.5/20;
-  imageDivWidth = appWidth*1/2 - beginningButtonSpace*1.5;
-  imageDivHeight = appHeight*1.5/5; //1+1.5=2.5, half of the total height
-  messageDIV_X = appWidth*1/2 + beginningButtonSpace*1/2;
-  messageDIV_Y = appHeight*1.5/20;
-  messageDIV_Width = appWidth*1/2 - beginningButtonSpace*1.5;
-  messageDIV_Height = appHeight*9/20;
-  ////
-  stopDivX = beginningButtonSpace + widthOfButton*0;
-  stopDivY = buttonY;
-  stopDivWidth = widthOfButton;
-  stopDivHeight = widthOfButton;
-  //
-  //STOP BUTTON
-  stopButtonX = stopDivX + stopDivWidth*1/4;
-  stopButtonY = stopDivY + stopDivHeight*1/4;
-  stopButtonWidth = widthOfButton*1/2;
-  stopButtonHeight = widthOfButton*1/2;
-  ////
-  muteDivX = beginningButtonSpace + widthOfButton*1;
-  muteDivY = buttonY;
-  muteDivWidth = widthOfButton;
-  muteDivHeight = widthOfButton;
-  previousDivX = beginningButtonSpace + widthOfButton*2;
-  previousDivY = buttonY;
-  previousDivWidth = widthOfButton;
-  previousDivHeight = widthOfButton;
-  fastRewindDivX = beginningButtonSpace + widthOfButton*3;
-  fastRewindDivY = buttonY;
-  fastRewindDivWidth = widthOfButton;
-  fastRewindDivHeight = widthOfButton;
-  pauseDivX = beginningButtonSpace + widthOfButton*4;
-  pauseDivY = buttonY;
-  pauseDivWidth = widthOfButton;
-  pauseDivHeight = widthOfButton;
-  ////
-  //Pause Button
-  pauseX1 = pauseDivX + pauseDivWidth*1/4;
-  pauseY1 = pauseDivY + pauseDivHeight*1/4;
-  pauseWidth1 = pauseDivWidth*1/8;
-  pauseHeight1 = pauseDivHeight*1/2;
-  pauseX2 = pauseDivX + pauseDivWidth*5/8;
-  pauseY2 = pauseDivY + pauseDivHeight*1/4;
-  pauseWidth2 = pauseDivWidth*1/8;
-  pauseHeight2 = pauseDivHeight*1/2;
-  //
-  playDivX = beginningButtonSpace + widthOfButton*5; //TEACHER Only" manipulate this number to draw simulate all buttons
-  playDivY = buttonY;
-  playDivWidth = widthOfButton;
-  playDivHeight = widthOfButton;
-  //
-  //Play Button
-  playX1 = playDivX + playDivWidth*1/4;
-  playY1 = playDivY + playDivHeight*1/4;
-  playX2 = playDivX + playDivWidth*3/4;
-  playY2 = playDivY + playDivHeight*1/2;
-  playX3 = playDivX + playDivWidth*1/4;
-  playY3 = playDivY + playDivHeight*3/4;
-  //
-  loopOnceDivX = beginningButtonSpace + widthOfButton*6;
-  loopOnceDivY = buttonY;
-  loopOnceDivWidth = widthOfButton;
-  loopOnceDivHeight = widthOfButton;
-  loopInfiniteDivX = beginningButtonSpace + widthOfButton*7;
-  loopInfiniteDivY = buttonY;
-  loopInfiniteDivWidth = widthOfButton;
-  loopInfiniteDivHeight = widthOfButton;
-  fastForwardDivX = beginningButtonSpace + widthOfButton*8;
-  fastForwardDivY = buttonY;
-  fastForwardDivWidth = widthOfButton;
-  fastForwardDivHeight = widthOfButton;
-  //
-  ////Fast Forward Button
-  //fastForwardX1 = fastForwardDivX + fastForwardDivWidth*1/4;
-  //fastForwardY1 = fastForwardDivY + fastForwardDivHeight*1/4;
-  //fastForwardX2 = fastForwardDivX + fastForwardDivWidth*1/2;
-  //fastForwardY2 = fastForwardDivY + fastForwardDivHeight*1/2;
-  //fastForwardX3 = fastForwardDivX + fastForwardDivWidth*1/4;
-  //fastForwardY3 = fastForwardDivY + fastForwardDivHeight*3/4;
-  //fastForwardX4 = fastForwardDivX + fastForwardDivWidth*1/2;
-  //fastForwardY4 = fastForwardDivY + fastForwardDivHeight*1/4;
-  //fastForwardX5 = fastForwardDivX + fastForwardDivWidth*3/4;
-  //fastForwardY5 = fastForwardDivY + fastForwardDivHeight*1/2;
-  //fastForwardX6 = fastForwardDivX + fastForwardDivWidth*1/2;
-  //fastForwardY6 = fastForwardDivY + fastForwardDivHeight*3/4;
-  //
-  nextDivX = beginningButtonSpace + widthOfButton*9;
-  nextDivY = buttonY;
-  nextDivWidth = widthOfButton;
-  nextDivHeight = widthOfButton;
-  shuffleDivX = beginningButtonSpace + widthOfButton*10;
-  shuffleDivY = buttonY;
-  shuffleDivWidth = widthOfButton;
-  shuffleDivHeight = widthOfButton;
-  //
-  float musicSongPaddingY = widthOfButton*1/4;
-  float musicSongSpaceX = stopDivX;
-  float musicSongSpaceY = stopDivY + widthOfButton + musicSongPaddingY;
-  float musicSongSpaceWidth = appWidth - widthOfButton*2;
-  float musicSongSpaceHeight = appHeight - musicSongPaddingY - musicSongSpaceY;
-  //rect(musicSongSpaceX, musicSongSpaceY, musicSongSpaceWidth, musicSongSpaceHeight); //testing only
-  songPositionDivX = musicSongSpaceX;
-  songPositionDivY = musicSongSpaceY;
-  songPositionDivWidth = musicSongSpaceWidth*1/5;
-  songPositionDivHeight = musicSongSpaceHeight*2/5;
-  timeRemainingDivX = musicSongSpaceX + musicSongSpaceWidth*3/5;
-  timeRemainingDivY = musicSongSpaceY + musicSongSpaceHeight*3/5;
-  timeRemainingDivWidth = musicSongSpaceWidth*1/5;
-  timeRemainingDivHeight = musicSongSpaceHeight*2/5;
-  totalTimeDivX = musicSongSpaceX + musicSongSpaceWidth*4/5;
-  totalTimeDivY = musicSongSpaceY + musicSongSpaceHeight*3/5;
-  totalTimeDivWidth = musicSongSpaceWidth*1/5;
-  totalTimeDivHeight = musicSongSpaceHeight*2/5;
-  float musicSongSpaceButtonHeight = musicSongSpaceHeight*1/5;
-  timeBarDivX = musicSongSpaceX;
-  timeBarDivY = musicSongSpaceY + musicSongSpaceHeight*2/5;
-  timeBarDivWidth = musicSongSpaceWidth;
-  timeBarDivHeight = musicSongSpaceHeight*1/5;
-  //
-  //DIVs
-  //rect(X, Y, Width, Height)
- rect(quitX, quitY, quitWidth, quitHeight);
-  rect(shuffleX, shuffleY, shuffleWidth, shuffleHeight);
-  rect(fastreverseX, fastreverseY, fastreverseWidth, fastreverseHeight);
-  rect(nextsongX, nextsongY, nextsongWidth, nextsongHeight);
-  rect(playX, playY, playWidth, playHeight);
-  rect(pauseX, pauseY, pauseWidth, pauseHeight);
-  rect(loopOnceX, loopOnceY, loopOnceWidth, loopOnceHeight);
-  rect(loopInfiniteX, loopInfiniteY, loopInfiniteWidth, loopInfiniteHeight);
-  rect(stopX, stopY, stopWidth, stopHeight);
-  rect(muteX, muteY, muteWidth, muteHeight);
-  rect(fastforwardX, fastforwardY, fastforwardWidth, fastforwardHeight);
-  rect(previousX, previousY, previousWidth, previousHeight);
-  rect(songimageX, songimageY, songimageWidth, songimageHeight);
-  rect(songtitleX, songtitleY, songtitleWidth, songtitleHeight);
-  rect(songartistX, songartistY, songartistWidth, songartistHeight);
-  rect(timebarX, timebarY, timebarWidth, timebarHeight);
-  rect(positionofthesongX, positionofthesongY, positionofthesongWidth, positionofthesongHeight);
-  rect(timeremainingX, timeremainingY, timeremainingWidth, timeremainingHeight);
-  rect(totaltimeofthesongX, totaltimeofthesongY, totaltimeofthesongWidth, totaltimeofthesongHeight);
-  rect(volumeX, volumeY, volumeWidth, volumeHeight);
  
-  //
-  //rect(timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight);
-  rect(stopButtonX, stopButtonY, stopButtonWidth, stopButtonHeight);
-  triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-  triangle(fastForwardX1, fastForwardY1, fastForwardX2, fastForwardY2, fastForwardX3, fastForwardY3);
-  triangle(fastForwardX4, fastForwardY4, fastForwardX5, fastForwardY5, fastForwardX6, fastForwardY6);
-  rect(pauseX1, pauseY1, pauseWidth1, pauseHeight1);
-  rect(pauseX2, pauseY2, pauseWidth2, pauseHeight2);
-  //
+void draw() {
+  background(#BFE7FC);
+
+  // Quit (X)
+void DrawQuit(float x, float y, float w, float h) {
+  stroke(200,0,0); strokeWeight(4);
+  line(x + w*0.2, y + h*0.2, x + w*0.8, y + h*0.8);
+  line(x + w*0.2, y + h*0.8, x + w*0.8, y + h*0.2);
+}
+
+ // Shuffle (crossed arrows)
+void drawShuffle(float x, float y, float w, float h) {
+  stroke(0); strokeWeight(3); noFill();
+  // First arrow
+  beginShape();
+  vertex(x + w*0.2, y + h*0.3);
+  vertex(x + w*0.8, y + h*0.7);
+  endShape();
+  // Second arrow
+  beginShape();
+  vertex(x + w*0.2, y + h*0.7);
+  vertex(x + w*0.8, y + h*0.3);
+  endShape();
+  // Arrowheads
+  triangle(x + w*0.75, y + h*0.68, x + w*0.85, y + h*0.68, x + w*0.8, y + h*0.78);
+  triangle(x + w*0.75, y + h*0.32, x + w*0.85, y + h*0.32, x + w*0.8, y + h*0.22);
+}
+
+
+  // Fast Reverse (||<<)
+void drawFastReverse(float x, float y, float w, float h) {
+  fill(0); noStroke();
+  float m = w*0.12;
+  // Bar
+  rect(x + w*0.7, y + h*0.25, m, h*0.5);
+  // Left triangles
+  triangle(x + w*0.65, y + h*0.2, x + w*0.65, y + h*0.8, x + w*0.4, y + h*0.5);
+  triangle(x + w*0.55, y + h*0.2, x + w*0.55, y + h*0.8, x + w*0.3, y + h*0.5);
+}
+ 
+  // Next Song (>|>)
+void drawNextSong(float x, float y, float w, float h) {
+  fill(0); noStroke();
+  float m = w*0.12;
+  // Bar
+  rect(x + w*0.18, y + h*0.25, m, h*0.5);
+  // Right triangles
+  triangle(x + w*0.25, y + h*0.2, x + w*0.25, y + h*0.8, x + w*0.5, y + h*0.5);
+  triangle(x + w*0.35, y + h*0.2, x + w*0.35, y + h*0.8, x + w*0.6, y + h*0.5);
+}
+
+
+// Play (>)
+void drawPlay(float x, float y, float w, float h) {
+  fill(0); noStroke();
+  triangle(x + w*0.3, y + h*0.2, x + w*0.3, y + h*0.8, x + w*0.75, y + h*0.5);
+}
+
+// Pause (||)
+void drawPause(float x, float y, float w, float h) {
+  fill(0); noStroke();
+  float barW = w*0.2;
+  rect(x + w*0.25, y + h*0.2, barW, h*0.6, 4);
+  rect(x + w*0.55, y + h*0.2, barW, h*0.6, 4);
+}  
+
+// Loop Once (circle arrow + 1)
+void drawLoopOnce(float x, float y, float w, float h) {
+  noFill(); stroke(0); strokeWeight(3);
+  arc(x + w*0.5, y + h*0.5, w*0.7, h*0.7, radians(40), radians(320));
+  // Arrowhead
+  float ax = x + w*0.8, ay = y + h*0.5;
+  triangle(ax, ay, ax-w*0.07, ay-h*0.07, ax-w*0.07, ay+h*0.07);
+  fill(0); noStroke();
+  textAlign(CENTER,CENTER); textSize(h*0.42);
+  text("1", x + w*0.5, y + h*0.7);
+}
+ 
+// Loop Infinite (∞)
+void drawLoopInfinite(float x, float y, float w, float h) {
+  fill(0); noStroke();
+  textAlign(CENTER, CENTER); textSize(h*0.8);
+  text("∞", x + w*0.5, y + h*0.52);
+}
+  
+// Stop (square)
+void drawStop(float x, float y, float w, float h) {
+  fill(0); noStroke();
+  rect(x + w*0.25, y + h*0.25, w*0.5, h*0.5, 6);
+}
+
+// Mute (speaker + x)
+void drawMute(float x, float y, float w, float h) {
+  fill(0); noStroke();
+  // Speaker (triangle)
+  triangle(x + w*0.25, y + h*0.6, x + w*0.4, y + h*0.6, x + w*0.25, y + h*0.4);
+  rect(x + w*0.4, y + h*0.4, w*0.13, h*0.2);
+  // X
+  stroke(200,0,0); strokeWeight(3);
+  line(x + w*0.65, y + h*0.4, x + w*0.8, y + h*0.6);
+  line(x + w*0.8, y + h*0.4, x + w*0.65, y + h*0.6);
+}
+
+// Fast Forward (>>|)
+void drawFastForward(float x, float y, float w, float h) {
+  fill(0); noStroke();
+  float m = w*0.12;
+  // Bar
+  rect(x + w*0.18, y + h*0.25, m, h*0.5);
+  // Right triangles
+  triangle(x + w*0.35, y + h*0.2, x + w*0.35, y + h*0.8, x + w*0.6, y + h*0.5);
+  triangle(x + w*0.45, y + h*0.2, x + w*0.45, y + h*0.8, x + w*0.7, y + h*0.5);
+}
+
+// Previous (|<<)
+void drawPrevious(float x, float y, float w, float h) {
+  fill(0); noStroke();
+  float m = w*0.12;
+  // Bar
+  rect(x + w*0.7, y + h*0.25, m, h*0.5);
+  // Left triangles
+  triangle(x + w*0.65, y + h*0.2, x + w*0.65, y + h*0.8, x + w*0.4, y + h*0.5);
+  triangle(x + w*0.55, y + h*0.2, x + w*0.55, y + h*0.8, x + w*0.3, y + h*0.5);
+}  
+ 
+
+  // Song image (music note, as placeholder)
+  drawButtonBox(songimageX, songimageY, songimageWidth, songimageHeight);
+  strokeWeight(4);
+  stroke(80,80,80);
+  fill(200,200,255, 50);
+  ellipse(songimageX+songimageWidth*0.3, songimageY+songimageHeight*0.65, songimageWidth*0.12, songimageHeight*0.22);
+  line(songimageX+songimageWidth*0.35, songimageY+songimageHeight*0.2, songimageX+songimageWidth*0.35, songimageY+songimageHeight*0.72);
+  ellipse(songimageX+songimageWidth*0.55, songimageY+songimageHeight*0.65, songimageWidth*0.12, songimageHeight*0.22);
+  line(songimageX+songimageWidth*0.60, songimageY+songimageHeight*0.2, songimageX+songimageWidth*0.60, songimageY+songimageHeight*0.72);
+
+  // Song title (just text)
+  drawButtonBox(songtitleX, songtitleY, songtitleWidth, songtitleHeight);
+  fill(50);
+  textAlign(LEFT, CENTER);
+  textSize(songtitleHeight*0.5);
+  text("Song Title", songtitleX+songtitleWidth*0.05, songtitleY+songtitleHeight*0.5);
+
+  // Song artist (just text)
+  drawButtonBox(songartistX, songartistY, songartistWidth, songartistHeight);
+  fill(80);
+  textAlign(LEFT, CENTER);
+  textSize(songartistHeight*0.3);
+  text("Artist Name", songartistX+songartistWidth*0.05, songartistY+songartistHeight*0.5);
+
+  // Time Bar (progress bar)
+  drawButtonBox(timebarX, timebarY, timebarWidth, timebarHeight);
+  fill(180,220,255, 120);
+  noStroke();
+  rect(timebarX+timebarWidth*0.03, timebarY+timebarHeight*0.35, timebarWidth*0.94, timebarHeight*0.3, 20);
+  fill(70,170,255, 190);
+  rect(timebarX+timebarWidth*0.03, timebarY+timebarHeight*0.35, timebarWidth*0.4, timebarHeight*0.3, 20); // pretend progress
+
+  // Timeremaining (just text)
+  drawButtonBox(timeremainingX, timeremainingY, timeremainingWidth, timeremainingHeight);
+  fill(40,40,40);
+  textAlign(CENTER, CENTER);
+  textSize(timeremainingHeight*0.4);
+  text("-2:30", timeremainingX+timeremainingWidth*0.5, timeremainingY+timeremainingHeight*0.5);
+
+  // Totaltimeofthesong (just text)
+  drawButtonBox(totaltimeofthesongX, totaltimeofthesongY, totaltimeofthesongWidth, totaltimeofthesongHeight);
+  fill(40,40,40);
+  textAlign(CENTER, CENTER);
+  textSize(totaltimeofthesongHeight*0.4);
+  text("3:41", totaltimeofthesongX+totaltimeofthesongWidth*0.5, totaltimeofthesongY+totaltimeofthesongHeight*0.5);
+
+  // Volume (speaker + bars)
+  drawButtonBox(volumeX, volumeY, volumeWidth, volumeHeight);
+  strokeWeight(3);
+  stroke(0);
+  fill(180);
+  float vspkX = volumeX+volumeWidth*0.23;
+  float vspkY = volumeY+volumeHeight*0.35;
+  beginShape();
+  vertex(vspkX, vspkY+volumeHeight*0.15);
+  vertex(vspkX+volumeWidth*0.16, vspkY+volumeHeight*0.15);
+  vertex(vspkX+volumeWidth*0.30, vspkY);
+  vertex(vspkX+volumeWidth*0.30, vspkY+volumeHeight*0.45);
+  vertex(vspkX+volumeWidth*0.16, vspkY+volumeHeight*0.30);
+  vertex(vspkX, vspkY+volumeHeight*0.30);
+  endShape(CLOSE);
+  // Bars
+  noFill();
+  stroke(80,160,70);
+  arc(volumeX+volumeWidth*0.55, volumeY+volumeHeight*0.55, volumeWidth*0.14, volumeHeight*0.20, -PI/3, PI/3);
+  arc(volumeX+volumeWidth*0.65, volumeY+volumeHeight*0.55, volumeWidth*0.20, volumeHeight*0.32, -PI/3, PI/3);
+
+  // Position of the song (skip, is empty/not used)
+  // drawButtonBox(positionofthesongX, positionofthesongY, positionofthesongWidth, positionofthesongHeight);
+}
+
+void drawButtonBox(float x, float y, float w, float h) {
+  stroke(80);
+  strokeWeight(2);
+  fill(255,255,255, 60);
+  rect(x, y, w, h, min(w, h)*0.2);
+}
+
+void mousePressed() {
+  // handle mouse interactions here
+}
+//
   //Images Drawing
   //
   //Image Aspect Ratio Algorithm: demonstrating Landscape to Portrait
